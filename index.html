@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcutor.com</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div>
+        <h1 class="text-center font-bold text-gray-300 my-5 font-[roboto] text-4xl">Welcome to calcutor.com</h1>
+    </div>
+    <div class="flex justify-center">
+        <input type="text" class="my-5 cursor-not-allowed input w-72 h-12 bg-transparent text-gray-200 rounded outline-black border border-gray-300">
+    </div>
+    <div>
+        <div class="row flex justify-center">
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">C</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border mx-2 border-gray-300 rounded">%</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">M+</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border ml-2 border-gray-300 rounded">M-</button>
+        </div>
+        <div class="row flex my-2 justify-center">
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">7</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border mx-2 border-gray-300 rounded">8</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">9</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border ml-2 border-gray-300 rounded">*</button>
+        </div>
+        <div class="row flex justify-center">
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">4</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border mx-2 border-gray-300 rounded">5</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">6</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border ml-2 border-gray-300 rounded">/</button>
+        </div>
+        <div class="row flex my-2 justify-center">
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">1</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border mx-2 border-gray-300 rounded">2</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">3</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border ml-2 border-gray-300 rounded">+</button>
+        </div>
+        <div class="row flex justify-center">
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">0</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border mx-2 border-gray-300 rounded">.</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border border-gray-300 rounded">=</button>
+            <button class="w-16 h-14 bg-transparent hover:bg-gray-200 hover:text-black text-gray-200 button border ml-2 border-gray-300 rounded">-</button>
+        </div>
+    </div>
+
+    <script>
+        // let a = setTimeout(() => {
+        //     alert("Welcome to calcutor.com")
+        // }, 2000);
+        // console.log(a)
+
+        let string = "";
+        let buttons = document.querySelectorAll('.button');
+        Array.from(buttons).forEach((button) => {
+            button.addEventListener('click', (e) => {
+                if (e.target.innerHTML == '=') {
+                    string = eval(string);
+                    document.querySelector('input').value = string;
+                }
+                else if (e.target.innerHTML == 'C') {
+                    string = ""
+                    document.querySelector('input').value = string;
+                }
+                else {
+                    console.log(e.target)
+                    string = string + e.target.innerHTML;
+                    document.querySelector('input').value = string;
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

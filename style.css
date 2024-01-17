@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
+body{
+    background-image: url('https://i.pinimg.com/736x/3c/e4/39/3ce439a152a704da5f7e52c6902689ab.jpg');
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
